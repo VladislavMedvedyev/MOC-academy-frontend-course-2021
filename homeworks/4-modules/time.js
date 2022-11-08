@@ -29,6 +29,7 @@ export function isMonthLong() {
         }
         return true;
     }
+    console.log(selectedYear)
     monthLongOutputEl.textContent = ifNumberDays();
 }
 
