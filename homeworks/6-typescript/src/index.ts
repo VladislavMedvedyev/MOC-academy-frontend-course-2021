@@ -20,6 +20,25 @@ function letterShow(): void {
 
 letterShow();
 
+function progressBar(): void {
+	const progressBarEl = document.querySelector('[data-progress-bar]') as HTMLDivElement;
+	let toggle: boolean = false;
+	let width: number = 99;
+	if (toggle === false) {
+		toggle = true;
+		const progressBarInterval = setInterval(frame, 20);
+		function frame(): void {
+			if (width >= 100) {
+				clearInterval(progressBarInterval);
+				toggle = false;
+			} else {
+				width -= 1;
+				progressBarEl.style.width = width.toString() + '%';
+			}
+		}
+	}
+}
+
 function bubbleResize(num: number): void {
 	circleEl.style.width = num * 1.5 + 'px';
 	circleEl.style.height = num * 1.5 + 'px';
@@ -43,6 +62,7 @@ function endGame(): void {
 
 function letterChanger(): void {
 	letterShow();
+	progressBar();
 	isKeyPressed = false;
 	document.addEventListener('keyup', gameplay);
 	if (isKeyPressed === false) {
@@ -65,11 +85,13 @@ function gameplay(event: KeyboardEvent): void {
 		counter += scoreGiven;
 		scoreChangesEl.textContent = `+ ${scoreGiven}`;
 		letterShow();
+		progressBar();
 	} else {
 		const scoreDeducted: number = getScores(20, 25)
 		counter -= scoreDeducted;
 		scoreChangesEl.textContent = `- ${scoreDeducted}`;
 		letterShow();
+		progressBar();
 	}
 	scoreEl.textContent = counter.toString();
 	isKeyPressed = true;
