@@ -1,0 +1,108 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+	padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+ul[class],
+ol[class] {
+	list-style: none;
+}
+
+a {
+	list-style: none;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.header__menu {
+	display: flex;
+}
+
+.menu__button-stop,
+.menu__button-restart {
+	margin-left: 20px;
+}
+
+.header__score {
+	margin-top: 75px;
+	font-size: 50px;
+}
+
+.main {
+	min-height: 350px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.main__circle {
+	margin-top: 50px;
+	width: 200px;
+	height: 200px;
+	max-width: 300px;
+	max-height: 300px;
+	border-radius: 50%;
+	background-color: rgb(255, 255, 0, 1);
+	border: 2px solid rgb(0, 0, 0, 1);
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10px;
+}
+
+.footer__score-change {
+	font-size: 35px;
+}
+
+.footer__key {
+	margin-top: 70px;
+	width: 100px;
+	font-size: 50px;
+	font-weight: 900;
+	text-align: center;
+	background-color: rgb(173, 255, 47, 1);
+}
